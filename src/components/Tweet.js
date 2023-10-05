@@ -9,7 +9,7 @@ export default ({ tweet }) => {
   return (
     <Pressable
       onPress={() => {
-        navigate("TweetDetailScreen", { tweet });
+        navigate("TweetDetails", { tweet });
       }}
     >
       <TweetContent tweet={tweet} />
