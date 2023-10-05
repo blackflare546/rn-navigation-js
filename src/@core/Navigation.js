@@ -15,7 +15,13 @@ const StackNavigator = () => {
         headerTitleAlign: "center",
       }}
     >
-      <Stack.Screen name="Feed" component={Feed} />
+      <Stack.Screen
+        name="Home"
+        component={BottomTabNavigator}
+        options={{
+          headerShown: false,
+        }}
+      />
       <Stack.Screen
         name="TweetDetails"
         component={TweetDetails}
@@ -35,7 +41,7 @@ const BottomTabNavigator = () => {
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
-          if (route.name === "Home") {
+          if (route.name === "Feed") {
             iconName = focused ? "home" : "home-outline";
           } else if (route.name === "Settings") {
             iconName = focused ? "settings" : "ios-settings-sharp";
@@ -48,13 +54,7 @@ const BottomTabNavigator = () => {
         tabBarInactiveTintColor: "gray",
       })}
     >
-      <BottomTab.Screen
-        name="Home"
-        component={StackNavigator}
-        options={{
-          headerShown: false,
-        }}
-      />
+      <BottomTab.Screen name="Feed" component={Feed} />
       <BottomTab.Screen name="Notification" component={Notificaiton} />
       <BottomTab.Screen name="Settings" component={Settings} />
     </BottomTab.Navigator>
@@ -64,7 +64,7 @@ const BottomTabNavigator = () => {
 export default () => {
   return (
     <NavigationContainer>
-      <BottomTabNavigator />
+      <StackNavigator />
     </NavigationContainer>
   );
 };
