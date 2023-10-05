@@ -72,7 +72,7 @@ const GrayText = ({ children, numberOfLines, style }) => {
   );
 };
 
-const TweetContent = ({ tweet }) => {
+export default ({ tweet }) => {
   const theme = useColorScheme();
   return (
     <View style={styles.singleItem}>
@@ -185,5 +185,3 @@ const styles = StyleSheet.create({
     flexGrow: 1,
   },
 });
-
-export default TweetContent;

@@ -1,17 +1,16 @@
+import { useLayoutEffect } from "react";
 import {
-  Button,
   FlatList,
   Image,
   Pressable,
   SafeAreaView,
   StyleSheet,
-  Text,
   View,
 } from "react-native";
-import { tweets } from "../../../data/tweet";
-import Tweet from "../../components/Tweet";
 import { useNavigation } from "@react-navigation/native";
-import { useLayoutEffect } from "react";
+
+import { Tweet } from "../../components";
+import { tweets } from "../../../data/tweet";
 
 export default function () {
   const navigation = useNavigation();

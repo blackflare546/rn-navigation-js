@@ -1,11 +1,14 @@
+import { Ionicons } from "@expo/vector-icons";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+
 import { Feed, Notificaiton, Settings } from "../screens/BottomTabs";
-import { Ionicons } from "@expo/vector-icons";
+import TweetDetails from "../screens/HomeStack/TweetDetails";
 
 const BottomTab = createBottomTabNavigator();
 
-function BottomTabNavigator() {
+const BottomTabNavigator = () => {
   return (
     <BottomTab.Navigator
       screenOptions={({ route }) => ({
@@ -29,9 +32,20 @@ function BottomTabNavigator() {
       <BottomTab.Screen name="Settings" component={Settings} />
     </BottomTab.Navigator>
   );
-}
+};
 
-export default Navigation = () => {
+const Stack = createNativeStackNavigator();
+
+const StackNavigator = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Bottom" component={BottomTabNavigator} />
+      <Stack.Screen name="Notifications" component={TweetDetails} />
+    </Stack.Navigator>
+  );
+};
+
+export default () => {
   return (
     <NavigationContainer>
       <BottomTabNavigator />

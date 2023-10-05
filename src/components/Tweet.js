@@ -1,9 +1,10 @@
-import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { Pressable } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+
 import TweetContent from "./TweetContent";
 
-const Tweet = ({ tweet }) => {
+export default ({ tweet }) => {
   const { navigate } = useNavigation();
   return (
     <Pressable
@@ -15,5 +16,3 @@ const Tweet = ({ tweet }) => {
     </Pressable>
   );
 };
-
-export default Tweet;
